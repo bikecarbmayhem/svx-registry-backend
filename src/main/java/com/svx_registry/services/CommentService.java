@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CommentService {
@@ -28,23 +29,11 @@ public class CommentService {
         return comment;
     }
 
-    /*
+
     public List<Comment> getCommentsByFrame(long frame) {
-
+        return this.comments.stream()
+                .filter(comment -> comment.getFrame() == frame)
+                .collect(Collectors.toList());
     }
-
-     */
-
-    /*
-    private int id;
-
-    private int frame;
-
-    private String authorName;
-
-    private LocalDate timestamp;
-
-    private String text;
-    */
 
 }
